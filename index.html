@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selective Repeat Protocol Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="controls-panel">
+            <h2>SR Protocol Parameters</h2>
+            <div class="parameter-group">
+                <label for="windowSize">Window Size:</label>
+                <input type="number" id="windowSize" min="1" max="10" value="4">
+            </div>
+            <div class="parameter-group">
+                <label for="timeout">Timeout (ms):</label>
+                <input type="number" id="timeout" min="100" max="5000" value="1000">
+            </div>
+            <div class="parameter-group">
+                <label for="packetLoss">Packet Loss Rate (%):</label>
+                <input type="number" id="packetLoss" min="0" max="100" value="10">
+            </div>
+            <div class="parameter-group">
+                <label for="numPackets">Number of Packets:</label>
+                <input type="number" id="numPackets" min="1" max="20" value="10">
+            </div>
+            <div class="parameter-group">
+                <label for="animationSpeed">Animation Speed:</label>
+                <div class="speed-control">
+                    <span>Slow</span>
+                    <input type="range" id="animationSpeed" min="1" max="10" value="5">
+                    <span>Fast</span>
+                </div>
+            </div>
+            <button id="startSimulation">Start Simulation</button>
+            <button id="pauseSimulation">Pause</button>
+            <button id="resetSimulation">Reset</button>
+        </div>
+        <div class="simulation-container">
+            <div id="currentStatus" class="current-status">
+                <div class="status-list"></div>
+            </div>
+            <div id="canvas-container"></div>
+            <div id="senderLabels" class="packet-labels sender-labels"></div>
+            <div id="receiverLabels" class="packet-labels receiver-labels"></div>
+        </div>
+        <div class="status-panel">
+            <h2>Simulation Status</h2>
+            <div id="status" class="status-messages"></div>
+        </div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html> 
